@@ -1,0 +1,290 @@
+listas.php:16:$id_articulos=$_GET["id_articulo"];
+listas.php:33:$array_precios=array_precios($id_articulos, "1");
+listas.php:38:	$array_lista=get_listas_porcentaje($id_articulos, $row["id"]);
+listas.php:48://$veri_promo=verifica_promo($id_articulos, $id_sucursal , $precio_base);
+listas.php:61:	$query='select * from articulos where id="'.$id_articulo.'"';
+listas.php:63:	$array_articulos=mysql_fetch_array($result);
+listas.php:64:return $array_articulos;	
+listas.php:70:function get_listas_porcentaje($id_articulos, $id_lista){
+listas.php:71:	$query='select * from listas_porcentaje where id_lista="'.$id_lista.'" and id_articulos="'.$id_articulos.'"';
+finalizar.inc.php:99:		$array_stock=stock_sucursal($row["id_articulos"],$id_sucursal);
+finalizar.inc.php:100:		$array_precios=array_precios($row["id_articulos"], $id_sucursal );
+finalizar.inc.php:103:			$array_precios=array_precios($row["id_articulos"], 1 );
+finalizar.inc.php:108:		$array_promocion=get_promo( $row["id_articulos"], $id_sucursal );
+finalizar.inc.php:120:	$array_stock=stock_sucursal($row["id_articulos"],$id_sucursal);
+finalizar.inc.php:123:		$precio_costo=calcula_precio_costo( $row["id_articulos"] );
+finalizar.inc.php:125:		//venta_temp_ventas(, $row["id_articulos"], $numero_venta, , $nombre_sucursal, $vendedor, $fecha, $hora, $id_sucursal );
+finalizar.inc.php:138:												id_articulos="'.$row["id_articulos"].'",
+finalizar.inc.php:154:		descuenta_stock($row["cantidad"], $row["id_articulos"], $id_sucursal);
+finalizar.inc.php:158:		id_articulo="'.$row["id_articulos"].'",
+venta_paso5.php.org:18:include_once("../../includes/funciones_articulos.php");
+venta_paso5.php:18:include_once("../../includes/funciones_articulos.php");
+venta_paso5.php:29:#verifica si existen articulos en promocion
+venta_paso5.php:106:echo '<tr><td><font1>Exixten articulos en promocion</font1></td>';
+venta_paso5.php:108:	echo '<tr><td><font1>Existen articulos en promocion</font1></td>';
+venta_actual.php:26:include_once("../../includes/funciones_articulos.php");
+venta_actual.php:37:	$array_articulos=detalle_articulo($row["id_articulos"]);
+venta_actual.php:39:	$array_precios=precio_sucursal($row["id_articulos"], $id_sucursal);
+venta_actual.php:41:		$array_precios=precio_sucursal($row["id_articulos"], 1);
+venta_actual.php:53:		$array_promocion=get_promo( $row["id_articulos"], $id_sucursal );
+venta_actual.php:65:	echo "<td>".$array_articulos["marca"]."</td>";
+venta_actual.php:66:	echo "<td>".$array_articulos["descripcion"]."</td>";
+venta_actual.php:67:	echo "<td>".$array_articulos["clasificacion"]."</td>";
+venta_actual.php:68:	echo "<td>".$array_articulos["subclasificacion"]."</td>";
+venta_actual.php:69:	echo "<td>".$array_articulos["contenido"]."</td>";
+venta_actual.php:70:	echo "<td>".$array_articulos["presentacion"]."</td>";
+lanzamientos.inc.php:6:$q1='select * from articulos_lanzamientos';
+lanzamientos.inc.php:13:$q2='select * from articulos_lanzamientos_rotacion where id_session="'.$id_session.'"';
+lanzamientos.inc.php:17:    $q3='insert into articulos_lanzamientos_rotacion set id_session="'.$id_session.'", count="'.$rows1.'", ultimo="1"';
+lanzamientos.inc.php:29:    $q3='update articulos_lanzamientos_rotacion set count="'.$rows1.'", ultimo="'.$nue.'"  where id_session="'.$id_session.'"';
+select_clasificacion.inc.php:11:$query='select distinct clasificacion from articulos 
+articulos_nuevos.php:6:  <title>Tablabla articulos By Christian Máculus</title>
+articulos_nuevos.php:21:$query='select * from articulos where fecha>="'.$fecha_desde.'" and fecha<="'.$fecha.'" and id>40000 order by marca,descripcion, contenido, presentacion';
+pedido_actual.php:28:include_once("../../includes/funciones_articulos.php");
+pedido_actual.php:39:	$array_articulos=detalle_articulo($row["id_articulos"]);
+pedido_actual.php:40:	//$array_precios=precio_sucursal($row["id_articulos"], $id_sucursal);
+pedido_actual.php:48:	echo "<td>".$array_articulos["id"]."</td>";
+pedido_actual.php:49:	echo "<td>".$array_articulos["codigo_interno"]."</td>";
+pedido_actual.php:51:	echo "<td>".$array_articulos["marca"]."</td>";
+pedido_actual.php:52:	echo "<td>".$array_articulos["descripcion"]."</td>";
+pedido_actual.php:53:	echo "<td>".$array_articulos["contenido"]."</td>";
+pedido_actual.php:54:	echo "<td>".$array_articulos["presentacion"]."</td>";
+pedido_actual.php:55:	echo "<td>".$array_articulos["clasificacion"]."</td>";
+pedido_actual.php:56:	echo "<td>".$array_articulos["subclasificacion"]."</td>";
+pedido_actual.php:57:	echo "<td>".$array_articulos["codigo_barra"]."</td>";
+select_subclasificacion.inc.php:3://$query='select distinct subclasificacion from articulos where marca="'.$_POST["marca"].'" clasificacion="'.$_POST["clasificasion"].'" order by subclasificacion';
+select_subclasificacion.inc.php:4:$query='select distinct subclasificacion from articulos where marca="'.mysql_real_escape_string($_POST["marca"]).'" and clasificacion="'.mysql_real_escape_string($_POST["clasificacion"]).'" and subclasificacion!="" order by subclasificacion';
+includes/funciones.php:26:function precio_costo($id_articulos){
+includes/funciones.php:27:	$query='select * from costos where id_articulos="'.$id_articulos.'"';
+includes/funciones.php:76:function verifica_costo( $id_articulos ){
+includes/funciones.php:77:	$query='select * from costos where id_articulos="'.$id_articulos.'"';
+includes/funciones.php:85:		$query='insert into costos set id_articulos="'.$id_articulos.'"';
+includes/funciones.php:91:		$query='delete from costos where id_articulos="'.$id_articulos.'"';
+includes/funciones.php:93:		$query='insert into costos set id_articulos="'.$id_articulos.'"';
+includes/funciones.php:104:function verifica_tabla_precios( $id_articulos ){
+includes/funciones.php:105:	$query='select * from precios where id_articulo="'.$id_articulos.'" and id_sucursal=1';
+includes/funciones.php:113:		$query='insert into precios set id_articulo="'.$id_articulos.'", id_sucursal="1" ';
+includes/funciones.php:119:		$query='delete from costos where id_articulos="'.$id_articulos.'"';
+includes/funciones.php:121:		$query='insert into costos set id_articulos="'.$id_articulos.'", id_sucursal="1" ';
+includes/funciones_promocion.php:3:function verifica_promocion($id_articulos, $id_sucursal){
+includes/funciones_promocion.php:4:	$query='select * from promociones where id_articulos="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+includes/funciones_promocion.php:9:		$q='delete from promociones where id_articulos="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+includes/funciones_promocion.php:18:function query_promocion($id_articulos, $id_sucursal, $precio_promocion, $fecha_inicio, $fecha_finaliza, $habilitado){
+includes/funciones_promocion.php:23:		$query='insert into promociones set id_articulos="'.$id_articulos.'",
+includes/funciones_promocion.php:38:	$q1='select * from promociones where id_articulos="'.$array_promociones["id_articulos"].'" and id_sucursal="'.$array_promociones["id_sucursal"].'"';
+includes/funciones_promocion.php:44:	$qii='id_articulos="'.$array_promociones["id_articulos"].'",
+includes/funciones_promocion.php:53:	$qf='where id_articulo="'.$array_promociones["id_articulos"].'" and id_sucursal="'.$array_promociones["id_sucursal"].'"';
+includes/funciones_promocion.php:62:		$qt='delete from promociones where id_articulos="'.$array_precios["id_articulos"].'" and id_sucursal="'.$array_precios["id_sucursal"].'"';
+includes/funciones_promocion.php:72:function get_promo( $id_articulos, $id_sucursal ){
+includes/funciones_promocion.php:74:	$q='select * from promociones where id_articulos="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+includes/venta_muestra1.inc.php:24:		$query='select * from articulos where id="'.$row["id_articulos"].'"';
+includes/venta_muestra1.inc.php:25: 		$array_articulos=mysql_fetch_array(mysql_query($query));
+includes/venta_muestra1.inc.php:27:	$array_precios=precio_sucursal($row["id_articulos"], $id_sucursal);
+includes/venta_muestra1.inc.php:29:		$array_precios=precio_sucursal($row["id_articulos"], 1);
+includes/venta_muestra1.inc.php:39:		$array_promocion=get_promo( $row["id_articulos"], $id_sucursal );
+includes/venta_muestra1.inc.php:54:	echo "<td>".$array_articulos["marca"]."</td>";
+includes/venta_muestra1.inc.php:55:	echo "<td>".$array_articulos["descripcion"]."</td>";
+includes/venta_muestra1.inc.php:56:	echo "<td>".$array_articulos["clasificacion"]."</td>";
+includes/venta_muestra1.inc.php:57:	echo "<td>".$array_articulos["subclasificacion"]."</td>";
+includes/venta_muestra1.inc.php:58:	echo "<td>".$array_articulos["contenido"]."</td>";
+includes/venta_muestra1.inc.php:59:	echo "<td>".$array_articulos["presentacion"]."</td>";
+a/articulo_muestra.inc.php:4:	$id=$array_articulos[$count]["id"];
+a/articulo_muestra.inc.php:49:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["marca"].'</td></tr>';
+a/articulo_muestra.inc.php:50:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["codigo_interno"].'</td></tr>';
+a/articulo_muestra.inc.php:51:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["descripcion"].$promocion.'</td>';
+a/articulo_muestra.inc.php:52:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["color"].'</td></tr>';
+a/articulo_muestra.inc.php:53:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["clasificacion"].'</td></tr>';
+a/articulo_muestra.inc.php:54:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["subclasificacion"].'</td>'.chr(13);
+a/articulo_muestra.inc.php:55:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["contenido"].'</td></tr>';
+a/articulo_muestra.inc.php:56:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["presentacion"].'</td></tr>';
+a/articulo_muestra.inc.php:57:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["codigo_barra"].'</td></tr>';
+articulo_muestra.inc.php:4:	$id=$array_articulos[$count]["id"];
+articulo_muestra.inc.php:49:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["marca"].'</td></tr>';
+articulo_muestra.inc.php:50:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["codigo_interno"].'</td></tr>';
+articulo_muestra.inc.php:51:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["descripcion"].$promocion.'</td>';
+articulo_muestra.inc.php:52:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["color"].'</td></tr>';
+articulo_muestra.inc.php:53:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["clasificacion"].'</td></tr>';
+articulo_muestra.inc.php:54:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["subclasificacion"].'</td>'.chr(13);
+articulo_muestra.inc.php:55:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["contenido"].'</td></tr>';
+articulo_muestra.inc.php:56:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["presentacion"].'</td></tr>';
+articulo_muestra.inc.php:57:	echo $tr.'<td><img src="circulo.png" width="10" height="10" alt=""> '.$array_articulos[$count]["codigo_barra"].'</td></tr>';
+funciones_promocion.php:3:function verifica_promocion($id_articulos, $id_sucursal){
+funciones_promocion.php:4:	$query='select * from promociones where id_articulos="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+funciones_promocion.php:9:		$q='delete from promociones where id_articulos="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+funciones_promocion.php:18:function query_promocion($id_articulos, $id_sucursal, $precio_promocion, $fecha_inicio, $fecha_finaliza, $habilitado){
+funciones_promocion.php:23:		$query='insert into promociones set id_articulos="'.$id_articulos.'",
+funciones_promocion.php:38:	$q1='select * from promociones where id_articulos="'.$array_promociones["id_articulos"].'" and id_sucursal="'.$array_promociones["id_sucursal"].'"';
+funciones_promocion.php:44:	$qii='id_articulos="'.$array_promociones["id_articulos"].'",
+funciones_promocion.php:53:	$qf='where id_articulo="'.$array_promociones["id_articulos"].'" and id_sucursal="'.$array_promociones["id_sucursal"].'"';
+funciones_promocion.php:62:		$qt='delete from promociones where id_articulos="'.$array_precios["id_articulos"].'" and id_sucursal="'.$array_precios["id_sucursal"].'"';
+funciones_promocion.php:72:function get_promo( $id_articulos, $id_sucursal ){
+funciones_promocion.php:73:	$q='select * from promociones where id_articulos="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+tarjetas_listado_coheficientes.php:22:$query='select * from articulos where id="'.$_GET["id_articulo"].'"';
+tarjetas_listado_coheficientes.php:23:$array_articulos=mysql_fetch_array(mysql_query($query));
+tarjetas_listado_coheficientes.php:31:		echo '<td>'.$array_articulos["id"].'</td>';
+tarjetas_listado_coheficientes.php:35:		echo '<td>'.$array_articulos["codigo_interno"].'</td>';
+tarjetas_listado_coheficientes.php:39:		echo '<td>'.$array_articulos["marca"].'</td>';
+tarjetas_listado_coheficientes.php:43:		echo '<td>'.$array_articulos["descripcion"].'</td>';
+tarjetas_listado_coheficientes.php:47:		echo '<td>'.$array_articulos["contenido"].'</td>';
+tarjetas_listado_coheficientes.php:51:		echo '<td>'.$array_articulos["presentacion"].'</td>';
+tarjetas_listado_coheficientes.php:55:		echo '<td>'.$array_articulos["codigo_barra"].'</td>';
+tarjetas_listado_coheficientes.php:58:		echo '<td>'.$array_articulos["clasificacion"].'</td>';
+tarjetas_listado_coheficientes.php:62:		echo '<td>'.$array_articulos["subclasificacion"].'</td>';
+tarjetas_listado_coheficientes.php:71:$array_costos=precio_costo($array_articulos["id"]);
+busqueda2.php:44:	$query='select * from articulos where marca="'.$_POST["marca"].'" order by marca, clasificacion, subclasificacion, descripcion';
+busqueda2.php:48:	$query='select * from articulos where marca="'.$_POST["marca"].'" and clasificacion="'.$_POST["clasificacion"].'" order by marca, clasificacion, subclasificacion, descripcion';
+busqueda2.php:52:	$query='select * from articulos where marca="'.$_POST["marca"].'" and clasificacion="'.$_POST["clasificacion"].'" and subclasificacion="'.$_POST["subclasificacion"].'" order by marca, clasificacion, subclasificacion, descripcion';
+busqueda2.php:62:echo '<br>Cantidad de articulos: '.$numrows.'<br>';
+busqueda2.php:71:        $array_articulos[]=$row;
+busqueda2.php:84:		//echo "<td>".$array_articulos[$count]["id"]."</td>";
+articulo_pedir.php:10:	$id_articulos=$_GET["id_articulo"];
+articulo_pedir.php:20:$query='select * from articulos where id="'.$id_articulos.'"';
+articulo_pedir.php:21:$array_articulos=mysql_fetch_array(mysql_query($query));
+articulo_pedir.php:33:id_articulos="'.$array_articulos["id"].'",
+articulo_pedir.php:34:marca="'.$array_articulos["marca"].'",
+articulo_pedir.php:35:descripcion="'.$array_articulos["descripcion"].'",
+articulo_pedir.php:36:color="'.$array_articulos["color"].'",
+articulo_pedir.php:37:contenido="'.$array_articulos["contenido"].'",
+articulo_pedir.php:38:presentacion="'.$array_articulos["presentacion"].'",
+articulo_pedir.php:39:codigo_barra="'.$array_articulos["codigo_barra"].'",
+articulo_pedir.php:40:clasificacion="'.$array_articulos["clasificacion"].'",
+articulo_pedir.php:41:subclasificacion="'.$array_articulos["subclasificacion"].'",
+articulo_pedir.php:59:function pedidos_elimina_duplicados( $id_articulos ){
+articulo_pedir.php:60:	$query='select * from pedidos_temp_nuevo where id_articulo="'.$id_session.'" order by id_articulos';
+articulo_pedir.php:64:		if($id_articulos==$row["id_articulos"]){
+articulo_pedir.php:68:			$id_articulos=$row["id_articulos"];
+venta_paso1.php:10:include_once("../../includes/funciones_articulos.php");
+detalle.php:45:$q='select observaciones from articulos where id="'.$_GET["id_articulo"].'"';
+ver1.php:13:$query='select * from promociones where id_articulos="'.$id_articulo.'"';
+ver1.php:22:	echo "<th>id_articulos</th>";
+ver1.php:33:	echo '<td>'.$row["id_articulos"].'</td>';
+ver1.php:44:$query='select * from articulos where id="'.$id_articulo.'"';
+ver1.php:49:echo "articulos<br>";
+funciones_precios.php:112:function verifica_tabla_precios($id_articulos, $id_sucursal ){
+funciones_precios.php:113:	$query='select * from precios where id_articulo="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+funciones_precios.php:116:		$q='insert into precios set id_articulo="'.$id_articulos.'", id_sucursal="'.$id_sucursal.'"';
+funciones_precios.php:120:		$q='delete from precios where id_articulo="'.$id_articulos.'", id_sucursal="'.$id_sucursal.'"';
+funciones_precios.php:123:		$q='insert into precios set id_articulo="'.$id_articulos.'", id_sucursal="'.$id_sucursal.'"';
+funciones_precios.php:137:function verifica_tabla_precios3($id_articulos, $id_sucursal ){
+funciones_precios.php:139:		$q1='select * from precios where id_articulo="'.$id_articulos.'" and id_sucursal="1"';
+funciones_precios.php:143:	$query='select * from precios where id_articulo="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+funciones_precios.php:147:			id_articulo="'.$id_articulos.'",
+funciones_precios.php:159:		$q='delete from precios where id_articulo="'.$id_articulos.'", id_sucursal="'.$id_sucursal.'"';
+funciones_precios.php:162:			id_articulo="'.$id_articulos.'",
+funciones_precios.php:181:function verifica_tabla_precios2($id_articulos, $id_sucursal){
+funciones_precios.php:182:	$query='select * from precios where id_articulo="'.$id_articulos.'" and id_sucursal="'.$id_sucursal.'"';
+pedidos_finaliza.php:8:include_once("../../includes/funciones_articulos.php");
+pedidos_finaliza.php:45:	$array_articulos=detalle_articulo($row["id_articulos"]);
+pedidos_finaliza.php:46:	$array_precios=precio_sucursal($row["id_articulos"], $id_sucursal);
+pedidos_finaliza.php:52:	echo "<td>".$array_articulos["id"]."</td>";
+pedidos_finaliza.php:53:	echo "<td>".$array_articulos["marca"]."</td>";
+pedidos_finaliza.php:54:	echo "<td>".$array_articulos["descripcion"]."</td>";
+pedidos_finaliza.php:55:	echo "<td>".$array_articulos["contenido"]."</td>";
+pedidos_finaliza.php:56:	echo "<td>".$array_articulos["presentacion"]."</td>";
+pedidos_finaliza.php:57:	echo "<td>".$array_articulos["clasificacion"]."</td>";
+pedidos_finaliza.php:58:	echo "<td>".$array_articulos["subclasificacion"]."</td>";
+pedidos_finaliza.php:59:	echo "<td>".$array_articulos["codigo_barra"]."</td>";
+pedidos_update.php:9:include_once("../../includes/funciones_articulos.php");
+pedidos_update.php:74:		$array_articulos=detalle_articulo($row["id_articulos"]);
+pedidos_update.php:75:		//$array_stock_origen=array_stock($row["id_articulos"],$id_sucursal);
+pedidos_update.php:76:		//$array_stock_destino=array_stock($row["id_articulos"],$_POST["id_destino"]);
+pedidos_update.php:86:	Header ("location: articulos_busqueda.php");
+pedidos_update.php:104:			id_articulo="'.$row["id_articulos"].'",
+pedidos_update.php:145:Header ("location: articulos_busqueda.php");
+pedidos_update.php:154:		$id_articulos=$_POST["id_articulo"];
+pedidos_update.php:161:													id_articulos="'.$id_articulos.'",
+stock_sucursales.php:70:	$query='select * from articulos where id="'.$id_articulo.'"';
+stock_sucursales.php:72:	$array_articulos=mysql_fetch_array($result);
+stock_sucursales.php:73:return $array_articulos;	
+venta_paso4_tarjetas.php:18:include_once("../../includes/funciones_articulos.php");
+venta_paso2.php:22:include_once("../../includes/funciones_articulos.php");
+select_marca.inc.php:4:$result=mysql_query('select distinct marca from articulos where marca!="" order by marca')or die(mysql_error());
+tarjetas_listado.php:23:$query='select * from articulos where id="'.$_GET["id_articulo"].'"';
+tarjetas_listado.php:24:$array_articulos=mysql_fetch_array(mysql_query($query));
+tarjetas_listado.php:32:		echo '<td>'.$array_articulos["id"].'</td>';
+tarjetas_listado.php:36:		echo '<td>'.$array_articulos["codigo_interno"].'</td>';
+tarjetas_listado.php:40:		echo '<td>'.$array_articulos["marca"].'</td>';
+tarjetas_listado.php:44:		echo '<td>'.$array_articulos["descripcion"].'</td>';
+tarjetas_listado.php:48:		echo '<td>'.$array_articulos["contenido"].'</td>';
+tarjetas_listado.php:52:		echo '<td>'.$array_articulos["presentacion"].'</td>';
+tarjetas_listado.php:56:		echo '<td>'.$array_articulos["codigo_barra"].'</td>';
+tarjetas_listado.php:60:		echo '<td>'.$array_articulos["clasificacion"].'</td>';
+tarjetas_listado.php:64:		echo '<td>'.$array_articulos["subclasificacion"].'</td>';
+tarjetas_listado.php:73:$array_costos=precio_costo($array_articulos["id"]);
+tarjetas_listado.php:99:	echo '<A class="w3-btn w3-purple" HREF="tarjetas_listado_coheficientes.php?id_tarjetas='.$row["id"].'&id_articulo='.$array_articulos["id"].'">Cantidad de<br>Pagos</A>';
+funciones.js:31:function cal2(idarticulos) {
+funciones.js:32:	temp1  = ( (document.getElementById('precio_costo'+idarticulos).value * (document.getElementById('des0a'+idarticulos).value * -1) )/100 ) + ( document.getElementById('precio_costo'+idarticulos).value * 1);
+funciones.js:33:	temp1  = ( (temp1 * (document.getElementById('des0b'+idarticulos).value * -1) )/100 ) + ( temp1 * 1);
+funciones.js:34:	temp1  = ( (temp1 * (document.getElementById('des0c'+idarticulos).value * -1) )/100 ) + ( temp1 * 1);
+funciones.js:35:	temp1  = ( (temp1 * (document.getElementById('des0d'+idarticulos).value * -1) )/100 ) + ( temp1 * 1);
+funciones.js:36:	temp1  = ( (temp1 * (document.getElementById('des0e'+idarticulos).value * -1) )/100 ) + ( temp1 * 1);
+funciones.js:37:	temp1  = ( (temp1 * (document.getElementById('des0f'+idarticulos).value * -1) )/100 ) + ( temp1 * 1);
+funciones.js:39:	total_con_iva  = ( (temp1 * document.getElementById('iva'+idarticulos).value )/100 ) + ( temp1 * 1);
+funciones.js:40:	total_web  = ( (temp1 * document.getElementById('margen_web'+idarticulos).value )/100 ) + ( total_con_iva * 1);
+funciones.js:41:	total_con_margen  = ( (total_con_iva * document.getElementById('margen'+idarticulos).value )/100 ) + ( total_con_iva * 1);
+funciones.js:43:	document.getElementById('precio_venta'+idarticulos).value = total_con_margen.toFixed(2);
+funciones.js:44:	document.getElementById('precio_web'+idarticulos).value = total_web.toFixed(2);
+consulta_precios.php:86:$query='select id from articulos where descripcion like "%'.$_POST["busqueda"].'%" or clasificacion like "%'.$_POST["busqueda"].'%" or subclasificacion like "%'.$_POST["busqueda"].'%" or marca like "%'.$_POST["busqueda"].'%" or codigo_barra="'.$_POST["busqueda"].'" or codigo_interno="'.$_POST["busqueda"].'" or 	id="'.$_POST["busqueda"].'" order by marca, clasificacion, subclasificacion, descripcion';
+consulta_precios.php:117:$query='select * from articulos where descripcion like "%'.$_POST["busqueda"].'%" or clasificacion like "%'.$_POST["busqueda"].'%" or subclasificacion like "%'.$_POST["busqueda"].'%" or marca like "%'.$_POST["busqueda"].'%" or codigo_barra="'.$_POST["busqueda"].'" or codigo_interno="'.$_POST["busqueda"].'" or 	id="'.$_POST["busqueda"].'" order by marca, clasificacion, subclasificacion, descripcion';
+consulta_precios.php:134:        $array_articulos[]=$row;
+consulta_precios.php:147:		//echo "<td>".$array_articulos[$count]["id"]."</td>";
+ventas_update.php:10:include_once("../../includes/funciones_articulos.php");
+ventas_update.php:72:		$id_articulos=$_POST["id_articulo"];
+ventas_update.php:77:	$array_ventas_temp2=array_articulos($id_articulos);
+ventas_update.php:82:		id_articulos="'.$array_ventas_temp2["id_articulos."].'",
+ventas_update.php:102:													id_articulos="'.$id_articulos.'",
+ventas_update.php:116:#esta funcion a agrega los articulos de la tabla ventas_temp a la tabla ventas
+ventas_update.php:117:function venta_temp_ventas($cantidad, $id_articulos, $numero_venta, $tipo_pago, $sucursal, $vendedor, $fecha, $hora, $id_sucursal ){
+ventas_update.php:118:	$descripcion=detalle_articulo($id_articulos);
+ventas_update.php:119:	$array_precios=precio_sucursal($id_articulos, $id_sucursal);
+ventas_update.php:129:		$array_promocion=get_promo( $row["id_articulos"], $id_sucursal );
+ventas_update.php:150:	$costo=calcula_precio_costo( $id_articulos );
+ventas_update.php:163:												id_articulos="'.$id_articulos.'",
+ventas_update.php:173:	seguimiento_x_venta($id_articulos, $cantidad, $id_sucursal, $numero_venta, $vendedor);	
+slideshow_imagenes.php:53:$q='select id from articulos_lanzamientos';
+venta_paso5.php.mio1:18:include_once("../../includes/funciones_articulos.php");
+venta_paso5.php.mio1:29:#verifica si existen articulos en promocion
+venta_paso5.php.mio1:104:echo '<tr><td><font1>Exixten articulos en promocion</font1></td>';
+venta_paso5.php.mio1:106:	echo '<tr><td><font1>Existen articulos en promocion</font1></td>';
+busqueda.php:85:$query='select id from articulos where descripcion like "%'.$_POST["busqueda"].'%" or clasificacion like "%'.$_POST["busqueda"].'%" or subclasificacion like "%'.$_POST["busqueda"].'%" or marca like "%'.$_POST["busqueda"].'%" or codigo_barra="'.$_POST["busqueda"].'" or codigo_interno="'.$_POST["busqueda"].'" or 	id="'.$_POST["busqueda"].'" order by marca, clasificacion, subclasificacion, descripcion';
+busqueda.php:116:$query='select * from articulos where descripcion like "%'.$_POST["busqueda"].'%" or clasificacion like "%'.$_POST["busqueda"].'%" or subclasificacion like "%'.$_POST["busqueda"].'%" or marca like "%'.$_POST["busqueda"].'%" or codigo_barra="'.$_POST["busqueda"].'" or codigo_interno="'.$_POST["busqueda"].'" or 	id="'.$_POST["busqueda"].'" order by marca, clasificacion, subclasificacion, descripcion';
+busqueda.php:132:        $array_articulos[]=$row;
+busqueda.php:157:		echo "<td>".$array_articulos["id"][0]."</td>";
+busqueda.php:160:		foreach($array_articulos as $listas){
+articulo_vender.php:4:include_once("../../includes/funciones_articulos.php");
+articulo_vender.php:18:	$id_articulos=$_GET["id_articulo"];
+articulo_vender.php:27:$array_articulos=detalle_articulo($id_articulos);
+articulo_vender.php:28:$array_precios=precio_sucursal2($id_articulos,$id_sucursal);
+articulo_vender.php:31:echo "id_articulos: ".$id_articulos."<br>";
+articulo_vender.php:43:		$array_promo=get_promo( $id_articulos, $id_sucursal);
+articulo_vender.php:89:												codigo_interno="'.mysql_real_escape_string($array_articulos["codigo_interno"]).'",
+articulo_vender.php:90:												marca="'.mysql_real_escape_string($array_articulos["marca"]).'",
+articulo_vender.php:91:												descripcion="'.mysql_real_escape_string($array_articulos["descripcion"]).$promo_af.'",
+articulo_vender.php:92:												contenido="'.mysql_real_escape_string($array_articulos["contenido"]).'",
+articulo_vender.php:93:												presentacion="'.mysql_real_escape_string($array_articulos["presentacion"]).'",
+articulo_vender.php:94:												clasificacion="'.mysql_real_escape_string($array_articulos["clasificacion"]).'",
+articulo_vender.php:95:												subclasificacion="'.mysql_real_escape_string($array_articulos["subclasificacion"]).'",
+articulo_vender.php:96:												codigo_barra="'.$array_articulos["codigo_barra"].'",
+articulo_vender.php:98:												id_articulos="'.$id_articulos.'",
+articulo_vender.php:118:echo "id_articulos: ".$id_articulos."<br>";
+articulo_vender.php:128:	$query='select * from ventas_temp2 where id_session="'.$id_session.'" order by id_articulos';
+articulo_vender.php:132:		if($id_articulos==$row["id_articulos"]){
+articulo_vender.php:137:			$id_articulos=$row["id_articulos"];
+venta_finaliza.php:11:include_once("../../includes/funciones_articulos.php");
+venta_finaliza.php:55:#verifica si existen articulos en promocion
+venta_finaliza.php:101:	$array_articulos=detalle_articulo($row["id_articulos"]);
+venta_finaliza.php:103:	$array_precios=precio_sucursal($row["id_articulos"], $id_sucursal);
+venta_finaliza.php:105:		$array_precios=precio_sucursal($row["id_articulos"], 1);
+venta_finaliza.php:118:		$array_promocion=get_promo( $row["id_articulos"], $id_sucursal );
+venta_finaliza.php:131:	echo "<td>".$array_articulos["descripcion"]." - ".$array_articulos["clasificacion"]." - ".$array_articulos["subclasificacion"].$promocion."</td>";
+venta_finaliza.php:273:        echo '<tr><td><font1>Existen articulos en promocion</font1></td>';
+venta_paso6_graba.php:18:include_once("../../includes/funciones_articulos.php");
+venta_paso6_graba.php:248:		$array_stock=stock_sucursal($row["id_articulos"],$id_sucursal);
+venta_paso6_graba.php:249:		$array_precios=array_precios($row["id_articulos"], $id_sucursal );
+venta_paso6_graba.php:252:			$array_precios=array_precios($row["id_articulos"], 1 );
+venta_paso6_graba.php:258:		$array_promocion=get_promo( $row["id_articulos"], $id_sucursal );
+venta_paso6_graba.php:270:		$precio_costo=calcula_precio_costo( $row["id_articulos"] );
+venta_paso6_graba.php:272:		//venta_temp_ventas(, $row["id_articulos"], $numero_venta, , $nombre_sucursal, $vendedor, $fecha, $hora, $id_sucursal );
+venta_paso6_graba.php:285:												id_articulos="'.$row["id_articulos"].'",
+venta_paso6_graba.php:308:	$arraya=descuenta_stock($row["cantidad"], $row["id_articulos"], $id_sucursal);
+venta_paso6_graba.php:316:		id_articulo="'.$row["id_articulos"].'",

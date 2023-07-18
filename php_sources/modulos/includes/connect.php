@@ -4,7 +4,7 @@ $user="sistema";
 $passwd="sistema";
 
 
-$base="koyikun";
+$base="franquicias";
 $base2="franquicias";
 $id_connection=mysql_connect($server,$user,$passwd);
 
