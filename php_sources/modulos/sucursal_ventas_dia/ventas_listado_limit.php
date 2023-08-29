@@ -43,14 +43,19 @@ echo '<font1>Sucursal: '.$sucursal.'</font1><br>'.chr(13);
 
 
 
+// $query='select distinct numero_venta from ventas where sucursal="'.$sucursal.'" and
+//                                                         fecha="'.$fecha.'" and 
+//                                                         hora>="'.$hora_desde.'" and 
+//                                                         hora <= "'.$hora_hasta.'" 
+//                                                                 order by fecha, hora desc';
+
+
 $query='select distinct numero_venta from ventas where sucursal="'.$sucursal.'" and
-                                                        fecha="'.$fecha.'" and 
-                                                        hora>="'.$hora_desde.'" and 
-                                                        hora <= "'.$hora_hasta.'" 
-                                                                order by fecha, hora desc';
-
-
-
+fecha="'.$fecha.'"
+		order by fecha, hora desc';
+		
+		
+		
 
 /*
 

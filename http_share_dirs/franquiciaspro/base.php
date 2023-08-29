@@ -113,9 +113,17 @@
 <body background="LOGOAF.jpg">
 <table border="0">
 <tr>
-	<td><a href="./modulos/franquicias_consulta/consulta_precios.php" target="centro"><button>Precios</button></a></td>
-	<td><a target="centro" class="myButton1"  href="./modulos/admin_ventas/ventas_base.php">VENTAS</a></td>
-	<td><a href="./login/login_finaliza.php"  target="centro"><button>Cerrar sesion</button></a></td>
+
+<!--  
+<td><a href="./modulos/franquicias_consulta/consulta_precios.php" target="centro"><button>Precios</button></a></td>
+usuarios_base.php
+-->
+
+<td><a href="./modulos/franquicias_costos/index.php" target="centro"><button>Costos</button></a></td>
+<td><a href="./modulos/admin_ventas/ventas_base.php" target="centro"><button>Ventas</button></a></td>
+<td><a href="./modulos/megatron_usuarios/usuarios_base.php" target="centro"><button>Usuarios</button></a></td>
+<!--  agregar usuarios-->
+<td><a href="./login/login_finaliza.php"  target="centro"><button>Cerrar sesion</button></a></td>
 </tr>
 
 
