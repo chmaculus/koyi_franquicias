@@ -68,14 +68,14 @@ if($_GET["vendedor"]=="NO"){
 	
 }
 
-if($_GET["autoriz"]=="NO"){
-		echo "<alerta1>El codigo de autorizacion no es valido</alerta1><br>";
-		$tipo_pago=get_ventas_temp_valores2($id_session,1);
-		$id_tarjeta=get_ventas_temp_valores2($id_session,2);
-		$tarjeta=get_ventas_temp_valores2($id_session,3);
-		$pagos=get_ventas_temp_valores2($id_session,4);
+// if($_GET["autoriz"]=="NO"){
+// 		echo "<alerta1>El codigo de autorizacion no es valido</alerta1><br>";
+// 		$tipo_pago=get_ventas_temp_valores2($id_session,1);
+// 		$id_tarjeta=get_ventas_temp_valores2($id_session,2);
+// 		$tarjeta=get_ventas_temp_valores2($id_session,3);
+// 		$pagos=get_ventas_temp_valores2($id_session,4);
 	
-}
+// }
 
 
 
@@ -97,17 +97,17 @@ echo '</td></tr>';
 
 
 
-if($promaa1!=0){
-echo '<tr><td><font1>Descuento: </font1></td>';
-	echo '<td><input type="text" name="descuento" size="5"></td></tr>';
-	echo '<tr><td><font1>INGRESO CODIGO DE AUTORIZACION </font1></td>';
-	echo '<td><input type="text" name="cod_autoriz" size="5"></td> <td>Autorizacion N°</td> <td>'.$cod_descuento.'</td></tr>';
-}else{
-echo '<tr><td><font1>Exixten articulos en promocion</font1></td>';
-	echo '<td></td></tr>';
-	echo '<tr><td><font1>Existen articulos en promocion</font1></td>';
-	echo '<td></td></tr>';
-}
+// if($promaa1!=0){
+// echo '<tr><td><font1>Descuento: </font1></td>';
+// 	echo '<td><input type="text" name="descuento" size="5"></td></tr>';
+// 	echo '<tr><td><font1>INGRESO CODIGO DE AUTORIZACION </font1></td>';
+// 	echo '<td><input type="text" name="cod_autoriz" size="5"></td> <td>Autorizacion N°</td> <td>'.$cod_descuento.'</td></tr>';
+// }else{
+// echo '<tr><td><font1>Exixten articulos en promocion</font1></td>';
+// 	echo '<td></td></tr>';
+// 	echo '<tr><td><font1>Existen articulos en promocion</font1></td>';
+// 	echo '<td></td></tr>';
+// }
 
 echo '</table><br>';
 

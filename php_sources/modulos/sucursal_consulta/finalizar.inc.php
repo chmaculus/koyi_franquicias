@@ -9,18 +9,18 @@
 		Header ("location: venta_finaliza.php?pago=NO");
 		exit;   	
 	}
-	if(!$_POST["sexo"]){
-		Header ("location: venta_finaliza.php?sexo=NO");
-		exit;   	
-	}
-	if(!$_POST["rango"]){
-		Header ("location: venta_finaliza.php?rango=NO");
-		exit;   	
-	}
-	if(!$_POST["pais"]){
-		Header ("location: venta_finaliza.php?pais=NO");
-		exit;   	
-	}
+	// if(!$_POST["sexo"]){
+	// 	Header ("location: venta_finaliza.php?sexo=NO");
+	// 	exit;   	
+	// }
+	// if(!$_POST["rango"]){
+	// 	Header ("location: venta_finaliza.php?rango=NO");
+	// 	exit;   	
+	// }
+	// if(!$_POST["pais"]){
+	// 	Header ("location: venta_finaliza.php?pais=NO");
+	// 	exit;   	
+	// }
 	#-------------------------------------------
 //	$total_venta=calcula_total_venta_temp($id_session);
 
@@ -73,13 +73,13 @@
 		exit;   	
 		}
 	}
-	$aaa=verifica_autorizacion($_POST["cod_autoriz"]);
-	if($aaa==1){
-			$cod_descuento=get_valor(8);
-			$cod_nuevo=$cod_descuento+3;
-			$q='update valores set valor="'.$cod_nuevo.'" where id=8';
-			mysql_query($q);
-	}
+	// $aaa=verifica_autorizacion($_POST["cod_autoriz"]);
+	// if($aaa==1){
+	// 		$cod_descuento=get_valor(8);
+	// 		$cod_nuevo=$cod_descuento+3;
+	// 		$q='update valores set valor="'.$cod_nuevo.'" where id=8';
+	// 		mysql_query($q);
+	// }
 	#--------------------------------------------------
 
 
