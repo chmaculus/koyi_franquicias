@@ -101,7 +101,6 @@ echo "<tr>";
     echo "<th>web</th>";
     echo "<th>Ultimo ingreso</th>";
     echo "<th></th>";
-    echo "<th>costo</th>";
     echo "<th>Total $ pedir</th>";
     echo "<th>Inmovilizado</th>";
 echo "</tr>";
@@ -299,7 +298,6 @@ while($row=mysql_fetch_array($result)){
 		$reposicion=0;
 	}    
     
-    echo '<td><input type="text" name="costo'.$row["id_articulo"].'" id="costo'.$row["id_articulo"].'" onchange="cal2('.$row["id_articulo"].');" value="'.$costo.'" size="5"></td>';
     $pedir=($reposicion * $costo);
     echo '<td><input type="text" name="totalpedir'.$row["id_articulo"].'" id="totalpedir'.$row["id_articulo"].'" value="'.$pedir.'" size="5"></td>';
     echo '<td>$'.$inmovilizado.'</td>';
