@@ -9,7 +9,7 @@ $user_path='/var/www/temp/listas/';
 
 
 	
-	$aa=str_replace("'"," ",$arr0["marca"]);
+	//$aa=str_replace("'"," ",$arr0["marca"]);
 	$aa=str_replace('"'," ",$aa);
 	$nombre_archivo='listas_web_general.csv';
 	$fopen = fopen($user_path.$nombre_archivo, 'w');
@@ -18,6 +18,7 @@ $user_path='/var/www/temp/listas/';
 	$header .= ';"Codigo"';
 	$header .= ';"Marca"';
 	$header .= ';"Descripcion"';
+	$header .= ';"Color"';
 	$header .= ';"Contenido"';
 	$header .= ';"Presentacion"';
 	$header .= ';"clasificacion"';
@@ -59,6 +60,7 @@ $user_path='/var/www/temp/listas/';
 		$linea.=';"'.$array_articulo["codigo_interno"].'"';
 		$linea.=';"'.$array_articulo["marca"].'"';
 		$linea.=';"'.str_replace('"','',$array_articulo["descripcion"]).'"';
+		$linea.=';"'.str_replace('"','',$array_articulo["color"]).'"';
 		$linea.=';"'.$array_articulo["contenido"].'"';
 		$linea.=';"'.$array_articulo["presentacion"].'"';
 		$linea.=';"'.$array_articulo["clasificacion"].'"';
@@ -103,13 +105,16 @@ function get_listas_porcentaje($id_articulos, $id_lista){
                 echo mysql_error();
         }
         $rows=mysql_num_rows($result);
-        if($rows==1){
+		if(isset($rows)){
+			if($rows==1){
                 $array_listas=mysql_fetch_array($result);
-                $array_listas["rows"];
-        }else{
+                //$array_listas["rows"];
+	        }else{
                 $array_listas["porcentaje"]=0;
-                $array_listas["rows"];
-        }
+                //$array_listas["rows"];
+    	    }
+		} 
+		
 return $array_listas;
 }
 
