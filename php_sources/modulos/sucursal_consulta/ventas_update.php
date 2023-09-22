@@ -44,8 +44,8 @@ if($_POST["accion"]=="FINALIZAR"){
 
 	//include_once("cabecera.inc.php");
 	include("finalizar.inc.php");
-Header ("location: ../sucursal_consulta/consulta_precios.php");
-//	Header ("location: ../sucursal_novedades/novedades.php");
+	Header ("location: ../sucursal_consulta/consulta_precios.php");
+	//	Header ("location: ../sucursal_novedades/novedades.php");
 	exit;   	
 
 }

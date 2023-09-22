@@ -34,6 +34,10 @@
 		$total=$_POST["total_contado"]; 
 	}
 
+	if($_POST["tipo_pago"]=="electronico"){	
+		$total=$_POST["total_electronico"]; 
+	}
+
 	if($_POST["tipo_pago"]=="tarjeta"){	
 		$total=$_POST["total_tarjeta"]; 
 	}
@@ -67,11 +71,11 @@
 
 	#--------------------------------------------------
 	if($_POST["descuento"]!="" OR $_POST["descuento"]!=0){
-		$aaa=verifica_autorizacion($_POST["cod_autoriz"]);
-		if($aaa==0){
-		Header ("location: venta_finaliza.php?autoriz=NO");
-		exit;   	
-		}
+//		$aaa=verifica_autorizacion($_POST["cod_autoriz"]);
+//		if($aaa==0){
+//		Header ("location: venta_finaliza.php?autoriz=NO");
+//		exit;   	
+//		}
 	}
 	// $aaa=verifica_autorizacion($_POST["cod_autoriz"]);
 	// if($aaa==1){
@@ -208,6 +212,26 @@
 		$query='insert into ventas set cantidad="1", 
 													marca="Dif x financiacion Debito",
 													descripcion="Debito",
+													numero_venta="'.$numero_venta.'",
+													tipo_pago="'.$_POST["tipo_pago"].'",
+													precio_unitario="'.$dif.'",
+													sucursal="'.$nombre_sucursal.'",
+													vendedor="'.$vendedor.'",
+													fecha="'.$fecha.'",
+													hora="'.$hora.'"
+		';
+		mysql_query($query) or die(mysql_error()." ".$query);
+	}
+	#-----------------------------------------------------
+	
+	
+	#-----------------------------------------------------
+	if($_POST["tipo_pago"]=="electronico"){	
+		$porcentaje_debito=get_valor(13);
+		$dif=($total_venta * $porcentaje_debito) / 100;  
+		$query='insert into ventas set cantidad="1", 
+													marca="Dif x financiacion Electronico",
+													descripcion="Electronico",
 													numero_venta="'.$numero_venta.'",
 													tipo_pago="'.$_POST["tipo_pago"].'",
 													precio_unitario="'.$dif.'",

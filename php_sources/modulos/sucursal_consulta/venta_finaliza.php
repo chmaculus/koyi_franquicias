@@ -149,26 +149,37 @@ echo '<tr>';
 echo '<td><input type="radio" name="tipo_pago" value="contado" id="radio08"></td>';
 echo '<td><font1>Contado</font1></td>';
 echo '<td><font1>$'.$total_contado.'</font1></td>';
-echo '</tr>';
+echo '</tr>'.chr(10);
 
 echo '<tr>';
 echo '<td><input type="radio" name="tipo_pago" value="debito" id="radio08"></td>';
 echo '<td><font1>Débito</font1></td>';
 echo '<td><font1>$'.$total_contado.'</font1></td>';
-echo '</tr>';
+echo '</tr>'.chr(10);
 
-	#----------------------
-	$por_tarj=get_valor(7);
-	$total_tarjeta=((($total_contado * $por_tarj) / 100 ) + $total_contado);
+#----------------------
+$por_tarj=get_valor(13);
+$total_electronico=((($total_contado * $por_tarj) / 100 ) + $total_contado);
+echo '<tr>';
+echo '<td><input type="radio" name="tipo_pago" value="electronico" id="radio08"></td>';
+echo '<td><font1>Electronico</font1></td>';
+echo '<td><font1>$'.$total_electronico.'</font1></td>';
+echo '</tr>'.chr(10);
+#----------------------
+
+#----------------------
+$por_tarj=get_valor(7);
+$total_tarjeta=((($total_contado * $por_tarj) / 100 ) + $total_contado);
 echo '<tr>';
 echo '<td><input type="radio" name="tipo_pago" value="tarjeta" id="radio08"></td>';
 echo '<td><font1>Tarjeta hasta 3 pagos</font1></td>';
 echo '<td><font1>$'.round($total_tarjeta,2).'</font1></td>';
 echo '<td><font1>3 pagos de $'.round(($total_tarjeta /3),2).'</font1></td>';
-echo '</tr>';
-	#----------------------
+echo '</tr>'.chr(10);
+#----------------------
 
-	#----------------------
+
+#----------------------
 // 	$por_tarj=get_valor(10);
 // 	$tarj6=((($total_contado * $por_tarj) / 100 ) + $total_contado);
 // echo '<tr>';
@@ -252,9 +263,9 @@ echo '<tr><td><font1>vendedor/a: </font1></td>';
 echo '<td><input type="text" name="vendedor" size="5"></td></tr>';
 
 
-/*
 echo '<tr><td><font1>Descuento: </font1></td>';
 echo '<td><input type="text" name="descuento" size="5"></td></tr>';
+/*
 echo '<tr><td><font1>INGRESO CODIGO DE AUTORIZACION </font1></td>';
 echo '<td><input type="text" name="cod_autoriz" size="5"></td> <td>Autorizacion N°</td> <td>'.$cod_descuento.'</td></tr>';
 */
@@ -279,6 +290,7 @@ echo '<td><input type="text" name="cod_autoriz" size="5"></td> <td>Autorizacion 
 echo '</table><br>';
 
 echo '<input type="hidden" name="total_contado" value="'.$total_contado.'">';
+echo '<input type="hidden" name="total_electronico" value="'.$total_electronico.'">';
 echo '<input type="hidden" name="total_tarjeta" value="'.$total_tarjeta.'">';
 
 echo'<input type="submit" name="accion" value="FINALIZAR">';
