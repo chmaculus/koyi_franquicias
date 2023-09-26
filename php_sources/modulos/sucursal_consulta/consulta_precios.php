@@ -185,8 +185,8 @@ function accion($id_articulo){
 //<link rel="parent" href="wildcats.htm" target="_blank">
 	echo '<td><A HREF="articulo_vender.php?id_articulo='.$id_articulo.'" ><button>Vender</button></A></td>';
 	echo '<td><A HREF="stock_sucursales.php?id_articulo='.$id_articulo.'" onClick="return popup(this, \'notes\')"><button>stock</button></A></td>';
-	echo '<td><A HREF="listas.php?id_articulo='.$id_articulo.'" onClick="return popup(this, \'notes\')"><button>Listas</button></A></td>';
-	echo '<td><A HREF="articulo_pedir.php?id_articulo='.$id_articulo.'" onClick="return popup(this, \'notes\')"><button>Pedir</button></A></td>';
+	//echo '<td><A HREF="listas.php?id_articulo='.$id_articulo.'" onClick="return popup(this, \'notes\')"><button>Listas</button></A></td>';
+	//echo '<td><A HREF="articulo_pedir.php?id_articulo='.$id_articulo.'" onClick="return popup(this, \'notes\')"><button>Pedir</button></A></td>';
 }
 #-----------------------------------------------------------------
 

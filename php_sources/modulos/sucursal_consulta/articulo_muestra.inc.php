@@ -112,11 +112,11 @@ echo '<table>';
 	echo '<tr>';
 	echo '<td><A HREF="articulo_vender.php?id_articulo='.$id.'" ><img src="botones/vender.jpeg" alt="""></A></td>';
 	echo '<td><A HREF="stock_sucursales.php?id_articulo='.$id.'" onClick="return popup(this, \'notes\')"><img src="botones2/stock.jpeg" alt=""></A></td>';
-	echo '<td><A HREF="listas.php?id_articulo='.$id.'" onClick="return popup(this, \'notes\')"><img src="botones2/listas.jpeg" alt=""></A></td>';
+	//echo '<td><A HREF="listas.php?id_articulo='.$id.'" onClick="return popup(this, \'notes\')"><img src="botones2/listas.jpeg" alt=""></A></td>';
 	echo '</tr><tr>';
-	echo '<td><A HREF="articulo_pedir.php?id_articulo='.$id.'" onClick="return popup(this, \'notes\')"><img src="botones2/pedir.jpeg" alt=""></A></td>';
-	echo '<td><A HREF="../sucursal/sucursal_envios/envio_articulo.php?id_articulo='.$id.'"><img src="botones2/enviar.jpeg" alt=""></A></td>';
-	echo '<td><video><source src="./imagenes/videos/'.$id.'.mp4""><img src="botones2/mas.jpeg" alt=""></A></video></td>';
+	//echo '<td><A HREF="articulo_pedir.php?id_articulo='.$id.'" onClick="return popup(this, \'notes\')"><img src="botones2/pedir.jpeg" alt=""></A></td>';
+	//echo '<td><A HREF="../sucursal/sucursal_envios/envio_articulo.php?id_articulo='.$id.'"><img src="botones2/enviar.jpeg" alt=""></A></td>';
+	//echo '<td><video><source src="./imagenes/videos/'.$id.'.mp4""><img src="botones2/mas.jpeg" alt=""></A></video></td>';
 	echo '</tr></table>';
 	
 	echo '</td>';
