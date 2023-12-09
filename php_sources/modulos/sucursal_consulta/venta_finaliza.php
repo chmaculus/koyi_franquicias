@@ -157,6 +157,12 @@ echo '<td><font1>Débito</font1></td>';
 echo '<td><font1>$'.$total_contado.'</font1></td>';
 echo '</tr>'.chr(10);
 
+echo '<tr>';
+echo '<td><input type="radio" name="tipo_pago" value="transferencia" id="radio08"></td>';
+echo '<td><font1>Transferencia</font1></td>';
+echo '<td><font1>$'.$total_contado.'</font1></td>';
+echo '</tr>'.chr(10);
+
 #----------------------
 $por_tarj=get_valor(13);
 $total_electronico=((($total_contado * $por_tarj) / 100 ) + $total_contado);

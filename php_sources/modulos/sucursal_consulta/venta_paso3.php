@@ -40,6 +40,10 @@ insert_or_update_ventas_temp_valores($array);
 		Header ("location: venta_paso5.php?tipo_pago=de");
 	}
 
+	if($_POST["tipo_pago"]=="transferencia"){	
+		Header ("location: venta_paso5.php?tipo_pago=tr");
+	}
+
 
 	///////////////////////
 	// pago tarjeta
