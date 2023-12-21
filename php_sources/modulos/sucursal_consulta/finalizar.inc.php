@@ -38,6 +38,10 @@
 		$total=$_POST["total_electronico"]; 
 	}
 
+	if($_POST["tipo_pago"]=="transferencia"){	
+		$total=$_POST["total_transferencia"]; 
+	}
+
 	if($_POST["tipo_pago"]=="tarjeta"){	
 		$total=$_POST["total_tarjeta"]; 
 	}

@@ -416,6 +416,8 @@ $descuento=str_replace( "," , "\." , $_POST["descuento"] );
 //echo "POST descuento: ".$_POST["descuento"]."<br><br>";
 	
 if( $_POST["descuento"] ){
+	echo "llega descuento<br>";
+	exit;
 		$des=( ($total_venta - $descuento) * (-1) );
 		$query='insert into ventas set cantidad="1", 
 													marca="Descuento",

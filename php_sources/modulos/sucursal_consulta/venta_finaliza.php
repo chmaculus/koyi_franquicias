@@ -296,7 +296,8 @@ echo '<td><input type="text" name="cod_autoriz" size="5"></td> <td>Autorizacion 
 echo '</table><br>';
 
 echo '<input type="hidden" name="total_contado" value="'.$total_contado.'">';
-echo '<input type="hidden" name="total_electronico" value="'.$total_electronico.'">';
+echo '<input type="hidden" name="total_electronico" value="'.$total_contado.'">';
+echo '<input type="hidden" name="total_transferencia" value="'.$total_contado.'">';
 echo '<input type="hidden" name="total_tarjeta" value="'.$total_tarjeta.'">';
 
 echo'<input type="submit" name="accion" value="FINALIZAR">';
